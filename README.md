@@ -296,6 +296,20 @@ pet-manager/
 *   **Usuário**: `admin`
 *   **Senha**: `admin`
 
+## 🎭 Modo Demonstração (API simulada)
+
+A API oficial do desafio (`https://pet-manager-api.geia.vip`) saiu do ar. Para que o projeto continue navegável, há um modo demo com uma API simulada dentro do próprio Next.js (`src/pages/api/mock/[...path].ts`), que implementa os mesmos endpoints e formatos usados pelo front: login e refresh de token, listagem paginada/filtrada, detalhe, cadastro, edição e exclusão de pets e tutores, upload de foto e vínculo pet-tutor.
+
+Para ativar, aponte a variável de ambiente para o mock (valor definido em tempo de build):
+
+```env
+NEXT_PUBLIC_URL_BACKEND=/api/mock
+```
+
+*   **Credenciais demo**: usuário `admin` e senha `admin`.
+*   **Dados fictícios**: 20 pets e 12 tutores inventados em `src/mock/dados.ts` (telefones, CPFs e endereços não são reais). Com o mock ativo, a interface exibe o aviso "Modo demonstração".
+*   **Estado volátil**: as alterações ficam apenas em memória no servidor e voltam aos dados iniciais quando a função reinicia (novo deploy, cold start na Vercel) e podem diferir entre instâncias. As fotos enviadas não são gravadas: o mock devolve uma ilustração em SVG.
+
 ## 🐳 Docker
 
 A aplicação está containerizada e pronta para deploy. O Dockerfile utiliza multi-stage build para otimizar o tamanho da imagem final.

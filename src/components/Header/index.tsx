@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import ModoDemo from "@/components/ModoDemo";
 
 export default function Header() {
   return (
     <header className="bg-cyan-600 shadow-lg">
+      <ModoDemo className="border-0 border-b" />
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between text-white">
         <Link href="/" className="font-bold text-2xl flex items-center gap-2 hover:opacity-90 transition-opacity duration-200">
           🐾 Pet Manager

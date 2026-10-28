@@ -5,6 +5,7 @@ import { FiLock, FiUser } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import ModoDemo from "@/components/ModoDemo";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface LoginModalProps {
@@ -86,7 +87,8 @@ export default function LoginModal({ onLoginSuccess }: LoginModalProps) {
                         </Button>
                     </form>
                 </CardContent>
-                <CardFooter className="justify-center">
+                <CardFooter className="flex-col gap-3">
+                    <ModoDemo className="rounded-md" />
                     <p className="text-xs text-muted-foreground"> Ambiente Seguro • Pet Manager </p>
                 </CardFooter>
             </Card>
